@@ -1,29 +1,40 @@
+import { useState, useEffect } from "react";
 import "./App.css";
+import axios from "axios";
 import Avatar from "./components/Avatar";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState("");
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get("/users.json");
+      setUsers(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      setIsError(error.message);
+      setIsLoading(false);
+    }
+  };
+  useEffect(() => {
+    fetchUsers();
+    console.log(users);
+  }, []);
+
   return (
     <>
-      <Avatar
-        image="https://picsum.photos/id/1/200/300"
-        name="Houssem"
-        status="inline"
-      />
-      <Avatar
-        image="https://picsum.photos/id/30/200/300"
-        name="Raslen"
-        status="occupied"
-      />
-      <Avatar
-        image="https://picsum.photos/id/40/200/300"
-        name="Farah"
-        status="offline"
-      />
-      <Avatar
-        image="https://picsum.photos/id/50/200/300"
-        name="Dalel"
-        status="inline"
-      />
+      {isLoading && <div className="loading">Data is loading.......</div>}
+      {isError && <div className="loading">{isError}</div>}
+      {users.map((user) => (
+        <Avatar
+          key={user.id}
+          image={user.image}
+          name={user.name}
+          status={user.status}
+        />
+      ))}
     </>
   );
 }

@@ -1,21 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Avatar.css";
 
 function Avatar({ image, name, status }) {
-  const statusColor = () => {
+  const [statusClass, setStatusClass] = useState("");
+
+  useEffect(() => {
     if (status === "inline") {
-      return "status-inline";
-    } else if (status === "offline") {
-      return "status-offline";
+      setStatusClass("status-inline");
     } else if (status === "occupied") {
-      return "status-away";
+      setStatusClass("status-away");
+    } else if (status === "offline") {
+      setStatusClass("status-offline");
     }
-  };
+  }, [statusClass]);
+
   return (
     <div className="avatar-container">
       <img src={image} alt="Avatar" className="avatar-img" />
       <p className="avatar-name">{name}</p>
-      <div className={`avatar-status ${statusColor()}`}></div>
+      <div className={`avatar-status ${statusClass}`}></div>
     </div>
   );
 }

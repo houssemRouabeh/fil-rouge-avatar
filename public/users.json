@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "image": "https://picsum.photos/id/1/200/300",
+    "name": "John Doe",
+    "status": "inline"
+  },
+  {
+    "id": 2,
+    "image": "https://picsum.photos/id/2/200/300",
+    "name": "Jane Smith",
+    "status": "offline"
+  },
+  {
+    "id": 3,
+    "image": "https://picsum.photos/id/3/200/300",
+    "name": "Alice Johnson",
+    "status": "occupied"
+  },
+  {
+    "id": 4,
+    "image": "https://picsum.photos/id/5/200/300",
+    "name": "Bob Brown",
+    "status": "inline"
+  },
+  {
+    "id": 5,
+    "image": "https://via.placeholder.com/150",
+    "name": "Charlie Davis",
+    "status": "offline"
+  },
+  {
+    "id": 6,
+    "image": "https://via.placeholder.com/150",
+    "name": "Eva Green",
+    "status": "occupied"
+  },
+  {
+    "id": 7,
+    "image": "https://via.placeholder.com/150",
+    "name": "Frank White",
+    "status": "inline"
+  },
+  {
+    "id": 8,
+    "image": "https://via.placeholder.com/150",
+    "name": "Grace Black",
+    "status": "offline"
+  },
+  {
+    "id": 9,
+    "image": "https://via.placeholder.com/150",
+    "name": "Henry Blue",
+    "status": "occupied"
+  },
+  {
+    "id": 10,
+    "image": "https://via.placeholder.com/150",
+    "name": "Ivy Red",
+    "status": "inline"
+  }
+]
